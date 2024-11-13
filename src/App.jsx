@@ -6,18 +6,16 @@ import { Input } from "./components/Input/Input";
 
 function App() {
   const [tarefas, setTarefas] = useState([]);
-  const [inputValue, setInputValue] = useState(""); // Estado para o valor do input
+  const [inputValue, setInputValue] = useState("");
 
-  // Função que cria uma nova tarefa
   const handleCriarTarefa = () => {
-    if (inputValue.trim() === "") return; // Não cria a tarefa se o input estiver vazio
+    if (inputValue.trim() === "") return;
 
     const novaTarefa = { id: Date.now(), texto: inputValue, concluida: false };
-    setTarefas([...tarefas, novaTarefa]); // Adiciona a nova tarefa à lista
-    setInputValue(""); // Limpa o valor do input após adicionar a tarefa
+    setTarefas([...tarefas, novaTarefa]);
+    setInputValue("");
   };
 
-  // Função que remove uma tarefa
   const removerTarefa = (id) => {
     setTarefas(tarefas.filter((tarefa) => tarefa.id !== id));
   };
