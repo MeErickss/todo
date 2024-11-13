@@ -13,6 +13,7 @@ function App() {
 
     const novaTarefa = { id: Date.now(), texto: inputValue, concluida: false };
     setTarefas([...tarefas, novaTarefa]);
+    console.log(novaTarefa)
     setInputValue("");
   };
 
@@ -22,7 +23,7 @@ function App() {
 
   const toggleConcluirTarefa = (id) => {
     setTarefas(
-      tarefas.map((tarefa) =>
+      tarefas.map((tarefa) => 
         tarefa.id === id ? { ...tarefa, concluida: !tarefa.concluida } : tarefa
       )
     );
@@ -49,7 +50,7 @@ function App() {
                 key={tarefa.id}
                 tarefa={tarefa}
                 toggleConcluir={() => toggleConcluirTarefa(tarefa.id)}
-                removerTarefa={() => removerTarefa(tarefa.id)} // Passando a função de remoção
+                removerTarefa={() => removerTarefa(tarefa.id)}
               />
             ))}
           </div>
