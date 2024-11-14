@@ -13,7 +13,6 @@ function App() {
 
     const novaTarefa = { id: Date.now(), texto: inputValue, concluida: false };
     setTarefas([...tarefas, novaTarefa]);
-    console.log(novaTarefa)
     setInputValue("");
   };
 
